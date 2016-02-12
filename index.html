@@ -22,18 +22,35 @@
                 <a class="navbar-brand" href="#">Notas</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><i class="glyphicon glyphicon-plus"></i><span> New Note</span></a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-inbox"></i><span> Archive</span></a></li>
+                </ul>
             </div>
         </div>
     </nav>
     
     <div class="container">
         <div class="row">
-            <ul class="col-md-12 col-sm-12 grid">
+            <ul class="col-md-12 col-sm-12">
                 <li class="grid-item col-md-4 col-sm-6">
                     <div class="panel panel-default">
-                        <div class="panel-heading">New Note</div>
-                        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tristique tristique augue vitae cursus. Nam tempus augue ligula, vel accumsan sem consequat ut. Pellentesque congue felis in porta placerat. Sed at arcu sem. Integer pharetra ullamcorper ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam est nisi, maximus sed porttitor ac, dictum eget nisl. Donec facilisis at est id ultricies.Praesent iaculis gravida metus</div>
-                        <div class="panel-footer">Buttons</div>
+                        <div class="panel-heading">
+                            New Note 
+                            <a href="" id="del-note"><i class="task-icon del pull-right glyphicon glyphicon-remove-circle"></i></a>
+                            <a href="" id="archive-note"><i class="task-icon pull-right glyphicon glyphicon-inbox"></i></a>
+                        </div>
+                        
+                        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tristique tristique augue vitae cursus. Nam tempus augue ligula, vel accumsan sem consequat ut. Pellentesque congue felis in porta placerat. Donec facilisis at est id ultricies.Praesent iaculis gravida metus</div>
+                        <div class="panel-footer clearfix">
+                            <div class="col-md-9 tags-hold">
+                                <span class="badge">reading</span>
+                                <span class="badge">inspiration</span>
+                            </div>
+                            <div class="col-md-3">
+                                <span class="label label-default">Time stamp</span>
+                            </div>
+                        </div>
                     </div>
                 </li>
             </ul>
@@ -41,7 +58,9 @@
     </div>
     
     <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/masonry.pkgd.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/utils.js"></script>
 </body>
 </html>

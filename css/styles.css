@@ -1,8 +1,29 @@
-
+body{
+    padding: 80px 0 0 0;
+}
 ul li{
     list-style: none;
 }
 
 nav .btn{
     margin-left: 10px;
+}
+.tags-icon{
+    font-size: 1.5rem;
+    color: #666;
+}
+.tags-hold{
+   padding-left: 0;
+}
+.task-icon{
+    margin: 3px 0 0 8px;
+    font-size: 1.5rem;
+    color: #666666;
+}
+.task-icon.del:hover{
+    color: #ce4844;
+    font-size: 1.7rem;
+}
+.panel-heading{
+    font-weight: bold;
 }
