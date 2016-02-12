@@ -36,7 +36,12 @@ nav .btn{
 .panel-heading{
     font-weight: bold;
 }
-@media screen and (min-width: 1px) and (max-width: 767px){
+@media screen and (min-width: 1px) and (max-width: 389px){
+    #grid[data-columns]::before {
+        content: '1 .col-xs-12';
+    }
+}
+@media screen and (min-width: 400px) and (max-width: 767px){
     #grid[data-columns]::before {
         content: '2 .col-xs-6';
     }
