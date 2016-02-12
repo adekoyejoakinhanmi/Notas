@@ -16,13 +16,21 @@ nav .btn{
    padding-left: 0;
 }
 .task-icon{
-    margin: 3px 0 0 8px;
+    margin: 3px 0 0 5px;
     font-size: 1.5rem;
     color: #666666;
+}
+.label.label-default{
+    color: #000;
+    background: #eee;
 }
 .task-icon.del:hover{
     color: #ce4844;
     font-size: 1.7rem;
+}
+.task-icon.archive:hover{
+    color: #1b809e;
+    font-size: 1.6rem;
 }
 .panel-heading{
     font-weight: bold;
