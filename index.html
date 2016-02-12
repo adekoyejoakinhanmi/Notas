@@ -31,10 +31,8 @@
     </nav>
     
     <div class="container">
-        <div class="row">
-            <ul class="grid col-md-12 col-sm-12">
-                <li class="grid-item col-md-4 col-sm-6">
-                    <div class="panel panel-default">
+        <div id="grid" data-columns>
+            <div class="panel panel-default">
                         <div class="panel-heading">
                             New Note 
                             <a href="" id="del-note"><i class="task-icon del pull-right glyphicon glyphicon-remove-circle"></i></a>
@@ -56,9 +54,7 @@
                             </div>
                         </div>
                     </div>
-                </li>
-                <li class="grid-item col-md-4 col-sm-6">
-                    <div class="panel panel-default">
+            <div class="panel panel-default">
                         <div class="panel-heading">
                             New Note 
                             <a href="" id="del-note"><i class="task-icon del pull-right glyphicon glyphicon-remove-circle"></i></a>
@@ -76,9 +72,7 @@
                             </div>
                         </div>
                     </div>
-                </li>
-                <li class="grid-item col-md-4 col-sm-6">
-                    <div class="panel panel-default">
+            <div class="panel panel-default">
                         <div class="panel-heading">
                             New Note 
                             <a href="" id="del-note"><i class="task-icon del pull-right glyphicon glyphicon-remove-circle"></i></a>
@@ -86,7 +80,7 @@
                         </div>
                         
                         <div class="panel-body">
-                            Nullam magna mauris, hendrerit quis velit et, sollicitudin feugiat felis. Donec at ullamcorper lorem, sit amet condimentum neque. Proin enim eros, efficitur vel enim a, dapibus pulvinar nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam vel ipsum dignissim nibh lobortis euismod et id odio. Nam elementum posuere dictum. Curabitur vitae erat quis justo maximus pellentesque. Cras consectetur urna et diam consequat, sit amet imperdiet dolor molestie. Etiam et justo eget leo congue venenatis. Sed faucibus cursus ipsum, sed posuere tortor ornare sit amet. Nunc ut tincidunt erat, a sodales arcu. Duis lectus leo, euismod eu lobortis a, rhoncus eget neque. Vestibulum sollicitudin at massa nec scelerisque. Proin volutpat placerat nunc ut facilisis.
+                            Nullam magna mauris, hendrerit quis velit et, sollicitudin feugiat felis. Donec at ullamcorper lorem, sit amet condimentum neque. Proin enim eros, efficitur vel enim a, dapibus pulvinar nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam vel ipsum dignissim nibh lobortis euismod et id odio. Nam elementum posuere dictum. Curabitur vitae erat quis justo maximus pellentesque. Duis lectus leo, euismod eu lobortis a, rhoncus eget neque. Vestibulum sollicitudin at massa nec scelerisque. Proin volutpat placerat nunc ut facilisis.
                         </div>
                         <div class="panel-footer clearfix">
                             <div class="tags-hold">
@@ -99,9 +93,7 @@
                             </div>
                         </div>
                     </div>
-                </li>
-                <li class="grid-item col-md-4 col-sm-6">
-                    <div class="panel panel-default">
+            <div class="panel panel-default">
                         <div class="panel-heading">
                             New Note 
                             <a href="" id="del-note"><i class="task-icon del pull-right glyphicon glyphicon-remove-circle"></i></a>
@@ -122,9 +114,7 @@
                             </div>
                         </div>
                     </div>
-                </li>                
-                <li class="grid-item col-md-4 col-sm-6">
-                    <div class="panel panel-default">
+            <div class="panel panel-default">
                         <div class="panel-heading">
                             New Note 
                             <a href="" id="del-note"><i class="task-icon del pull-right glyphicon glyphicon-remove-circle"></i></a>
@@ -132,7 +122,25 @@
                         </div>
                         
                         <div class="panel-body">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tristique tristique augue vitae cursus. Nam tempus augue ligula, vel accumsan sem consequat ut. Donec facilisis at est id ultricies.Praesent iaculis gravida metus
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tristique tristique augue vitae cursus. Nam tempus augue ligula, vel accumsan sem consequat ut. Praesent iaculis gravida metus
+                        </div>
+                        <div class="panel-footer clearfix">
+                            <div class="tags-hold">
+                            </div>
+                            <div class="pull-right">
+                                <span class="label label-default">Time stamp</span>
+                            </div>
+                        </div>
+                    </div>
+            <div class="panel panel-default">
+                        <div class="panel-heading">
+                            New Note 
+                            <a href="" id="del-note"><i class="task-icon del pull-right glyphicon glyphicon-remove-circle"></i></a>
+                            <a href="" id="archive-note"><i class="task-icon archive pull-right glyphicon glyphicon-inbox"></i></a>
+                        </div>
+                        
+                        <div class="panel-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tristique tristique augue vitae cursus. Nam tempus augue ligula, vel accumsan sem consequat ut. Pellentesque congue felis in porta placerat. Donec facilisis at est id ultricies.Praesent iaculis gravida metus
                         </div>
                         <div class="panel-footer clearfix">
                             <div class="tags-hold">
@@ -145,15 +153,31 @@
                             </div>
                         </div>
                     </div>
-                </li>
-            </ul>
+            <div class="panel panel-default">
+                        <div class="panel-heading">
+                            New Note 
+                            <a href="" id="del-note"><i class="task-icon del pull-right glyphicon glyphicon-remove-circle"></i></a>
+                            <a href="" id="archive-note"><i class="task-icon archive pull-right glyphicon glyphicon-inbox"></i></a>
+                        </div>
+                        
+                        <div class="panel-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tristique tristique augue vitae cursus. Nam tempus augue ligula, vel accumsan sem consequat ut. Praesent iaculis gravida metus
+                        </div>
+                        <div class="panel-footer clearfix">
+                            <div class="tags-hold">
+                            </div>
+                            <div class="pull-right">
+                                <span class="label label-default">Time stamp</span>
+                            </div>
+                        </div>
+                    </div>
         </div>
     </div>
     
     <script src="js/jquery-1.11.3.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/Salvatorre.min.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/uils.js"></script>
+    <script src="js/utils.js"></script>
 </body>
 </html>
