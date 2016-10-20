@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-ng-app="Notas">
 <head>
     <title>Notas</title>
     <meta charset="UTF-8">
@@ -10,7 +10,7 @@
     <link href="css/styles.css" rel="stylesheet"/>
 </head>
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
+  <!--  <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
@@ -19,194 +19,63 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Notas</a>
+                <a class="navbar-brand" id="stateTitle">Notas</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
-                <a class="btn btn-sm navbar-btn btn-default pull-right" href="#" data-toggle="modal" data-target=".modal"><i class="glyphicon glyphicon-plus"></i><span> New Note</span></a>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><i class="glyphicon glyphicon-inbox"></i><span> Archive</span></a></li>
+                <li><a ui-sref="archive"><i class="glyphicon glyphicon-inbox"></i><span> Archive</span></a></li>
+                    <li><a ui-sref="notes"><i class="glyphicon glyphicon-list-alt"></i><span> Notes</span></a></li>
                 </ul>
             </div>
         </div>
-    </nav>
-    
-    <div class="modal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">New Note</h4>
-                </div>
-                
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="newNoteTitle" placeholder="Enter Title">
-                        </div>
-                        <div class="form-group">
-                            <textarea type="text" class="form-control" id="newNoteContent" placeholder="Your awesome content here"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="newNoteTags" placeholder="Tags: inspiration, personal...">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+    </nav>-->
+    <div>
+
+        <div class="container">
+            <div class="col-md-6 col-md-offset-3">
+                <form class="form-pad clearfix">
+                    <input id="focus-note" type="text" class="form-control" placeholder="Take a note...">
+                    <div class="hidden filling-area">
+                        <input id="newNoteTitle" type="text" class="form-control" placeholder="Title">
+                        <textarea id="newNoteContent" class="form-control" autofocus>Start typing your new note...
+                        </textarea>
+                        <button type="submit" id="submit-note" class="btn btn-sm btn-default pull-right">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+<p>&nbsp;</p>
+        <div class="container">
+            <div id="grid" data-columns>
             </div>
         </div>
     </div>
     
-    <div class="container">
-        <div id="grid" data-columns>
-            <div class="panel panel-default">
-                        <div class="panel-heading">
-                            New Note 
-                            <a href="" id="del-note"><i class="task-icon del pull-right glyphicon glyphicon-remove-circle"></i></a>
-                            <a href="" id="archive-note"><i class="task-icon archive pull-right glyphicon glyphicon-inbox"></i></a>
-                        </div>
-                        
-                        <div class="panel-body">
-                            Nunc malesuada neque urna, non dignissim arcu convallis sed. In viverra lectus quis est luctus, a pretium nisi eleifend. Quisque commodo non ex non porta. Etiam at eros ipsum. Aenean id efficitur ipsum. Curabitur posuere massa in lectus molestie, eu vulputate turpis accumsan. Suspendisse mi mauris, lacinia maximus interdum varius, sagittis et ex. Phasellus tempor libero sed ex sollicitudin viverra. Sed sed maximus nibh. Praesent sed semper justo. Vivamus tincidunt molestie nisl quis ultrices.
-                        </div>
-                        <div class="panel-footer clearfix">
-                            <div class="tags-hold">
-                                <span class="badge">reading</span>
-                                <span class="badge">spiritual</span>
-                                <span class="badge">school work</span>
-                                <span class="badge">inspiration</span>
-                            </div>
-                            <div class="pull-right">
-                                <span class="label label-default">Time stamp</span>
-                            </div>
-                        </div>
-                    </div>
-            <div class="panel panel-default">
-                        <div class="panel-heading">
-                            New Note 
-                            <a href="" id="del-note"><i class="task-icon del pull-right glyphicon glyphicon-remove-circle"></i></a>
-                            <a href="" id="archive-note"><i class="task-icon archive pull-right glyphicon glyphicon-inbox"></i></a>
-                        </div>
-                        
-                        <div class="panel-body">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tristique tristique augue vitae cursus. Nam tempus augue ligula, vel accumsan sem consequat ut. Praesent iaculis gravida metus
-                        </div>
-                        <div class="panel-footer clearfix">
-                            <div class="tags-hold">
-                            </div>
-                            <div class="pull-right">
-                                <span class="label label-default">Time stamp</span>
-                            </div>
-                        </div>
-                    </div>
-            <div class="panel panel-default">
-                        <div class="panel-heading">
-                            New Note 
-                            <a href="" id="del-note"><i class="task-icon del pull-right glyphicon glyphicon-remove-circle"></i></a>
-                            <a href="" id="archive-note"><i class="task-icon archive pull-right glyphicon glyphicon-inbox"></i></a>
-                        </div>
-                        
-                        <div class="panel-body">
-                            Nullam magna mauris, hendrerit quis velit et, sollicitudin feugiat felis. Donec at ullamcorper lorem, sit amet condimentum neque. Proin enim eros, efficitur vel enim a, dapibus pulvinar nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam vel ipsum dignissim nibh lobortis euismod et id odio. Nam elementum posuere dictum. Curabitur vitae erat quis justo maximus pellentesque. Duis lectus leo, euismod eu lobortis a, rhoncus eget neque. Vestibulum sollicitudin at massa nec scelerisque. Proin volutpat placerat nunc ut facilisis.
-                        </div>
-                        <div class="panel-footer clearfix">
-                            <div class="tags-hold">
-                                <span class="badge">reading</span>
-                                <span class="badge">spiritual</span>
-                                <span class="badge">inspiration</span>
-                            </div>
-                            <div class="pull-right">
-                                <span class="label label-default">Time stamp</span>
-                            </div>
-                        </div>
-                    </div>
-            <div class="panel panel-default">
-                        <div class="panel-heading">
-                            New Note 
-                            <a href="" id="del-note"><i class="task-icon del pull-right glyphicon glyphicon-remove-circle"></i></a>
-                            <a href="" id="archive-note"><i class="task-icon archive pull-right glyphicon glyphicon-inbox"></i></a>
-                        </div>
-                        
-                        <div class="panel-body">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tristique tristique augue vitae cursus. Nam tempus augue ligula, vel accumsan sem consequat ut. Pellentesque congue felis in porta placerat. Donec facilisis at est id ultricies.Praesent iaculis gravida metus
-                        </div>
-                        <div class="panel-footer clearfix">
-                            <div class="tags-hold">
-                                <span class="badge">reading</span>
-                                <span class="badge">spiritual</span>
-                                <span class="badge">inspiration</span>
-                            </div>
-                            <div class="pull-right">
-                                <span class="label label-default">Time stamp</span>
-                            </div>
-                        </div>
-                    </div>
-            <div class="panel panel-default">
-                        <div class="panel-heading">
-                            New Note 
-                            <a href="" id="del-note"><i class="task-icon del pull-right glyphicon glyphicon-remove-circle"></i></a>
-                            <a href="" id="archive-note"><i class="task-icon archive pull-right glyphicon glyphicon-inbox"></i></a>
-                        </div>
-                        
-                        <div class="panel-body">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tristique tristique augue vitae cursus. Nam tempus augue ligula, vel accumsan sem consequat ut. Praesent iaculis gravida metus
-                        </div>
-                        <div class="panel-footer clearfix">
-                            <div class="tags-hold">
-                            </div>
-                            <div class="pull-right">
-                                <span class="label label-default">Time stamp</span>
-                            </div>
-                        </div>
-                    </div>
-            <div class="panel panel-default">
-                        <div class="panel-heading">
-                            New Note 
-                            <a href="" id="del-note"><i class="task-icon del pull-right glyphicon glyphicon-remove-circle"></i></a>
-                            <a href="" id="archive-note"><i class="task-icon archive pull-right glyphicon glyphicon-inbox"></i></a>
-                        </div>
-                        
-                        <div class="panel-body">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tristique tristique augue vitae cursus. Nam tempus augue ligula, vel accumsan sem consequat ut. Pellentesque congue felis in porta placerat. Donec facilisis at est id ultricies.Praesent iaculis gravida metus
-                        </div>
-                        <div class="panel-footer clearfix">
-                            <div class="tags-hold">
-                                <span class="badge">reading</span>
-                                <span class="badge">spiritual</span>
-                                <span class="badge">inspiration</span>
-                            </div>
-                            <div class="pull-right">
-                                <span class="label label-default">Time stamp</span>
-                            </div>
-                        </div>
-                    </div>
-            <div class="panel panel-default">
-                        <div class="panel-heading">
-                            New Note 
-                            <a href="" id="del-note"><i class="task-icon del pull-right glyphicon glyphicon-remove-circle"></i></a>
-                            <a href="" id="archive-note"><i class="task-icon archive pull-right glyphicon glyphicon-inbox"></i></a>
-                        </div>
-                        
-                        <div class="panel-body">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tristique tristique augue vitae cursus. Nam tempus augue ligula, vel accumsan sem consequat ut. Praesent iaculis gravida metus
-                        </div>
-                        <div class="panel-footer clearfix">
-                            <div class="tags-hold">
-                            </div>
-                            <div class="pull-right">
-                                <span class="label label-default">Time stamp</span>
-                            </div>
-                        </div>
-                    </div>
+    <script src="js/vendors/jquery-1.11.3.js"></script>
+    <script src="js/vendors/underscore.js"></script>
+    <script src="js/vendors/Backbone.js"></script>
+    <script src="js/vendors/bootstrap.min.js"></script>
+    <script src="js/vendors/salvatorre.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <script id="note" type="text/template">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            {{title}}
+            <a href="" id="del-note"><i class="task-icon del pull-right glyphicon glyphicon-remove-circle"></i></a>
+        </div>
+        <div class="panel-body">
+            {{content}}
+        </div>
+        <div class="panel-footer clearfix">
+            <div class="pull-right">
+                <span class="label label-default">{{time}}</span>
+            </div>
         </div>
     </div>
-    
-    <script src="js/jquery-1.11.3.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/Salvatorre.min.js"></script>
-    <script src="js/script.js"></script>
+    </script>
+
     <script src="js/utils.js"></script>
 </body>
 </html>
