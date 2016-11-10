@@ -47,35 +47,37 @@
 
 <p>&nbsp;</p>
         <div class="container">
-            <div id="grid" data-columns>
-            </div>
+            <div class="row grid">
+				
+			</div>
         </div>
     </div>
     
+    <script id="note" type="text/template">
+    <div class="item col-md-3 col-sm-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<%=title%>
+				<a href="" id="del-note"><i class="task-icon del pull-right glyphicon glyphicon-remove-circle"></i></a>
+			</div>
+			<div class="panel-body">
+				<%=content%>
+			</div>
+			<div class="panel-footer clearfix">
+				<div class="pull-right">
+					<span class="label label-default"><%=time%></span>
+				</div>
+			</div>
+		</div>
+	</div>
+    </script>
+    
     <script src="js/vendors/jquery-1.11.3.js"></script>
+    <script src="js/vendors/masonry.pkgd.min.js"></script>
     <script src="js/vendors/underscore.js"></script>
     <script src="js/vendors/Backbone.js"></script>
     <script src="js/vendors/bootstrap.min.js"></script>
-    <script src="js/vendors/salvatorre.min.js"></script>
-    <script src="js/script.js"></script>
-
-    <script id="note" type="text/template">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            {{title}}
-            <a href="" id="del-note"><i class="task-icon del pull-right glyphicon glyphicon-remove-circle"></i></a>
-        </div>
-        <div class="panel-body">
-            {{content}}
-        </div>
-        <div class="panel-footer clearfix">
-            <div class="pull-right">
-                <span class="label label-default">{{time}}</span>
-            </div>
-        </div>
-    </div>
-    </script>
-
     <script src="js/utils.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

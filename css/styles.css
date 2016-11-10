@@ -75,6 +75,9 @@ input#focus-note:focus{
     background-color: rgba(0,0,0,0.15);
     border-radius: 1px;
 }
+#newNoteTitle{
+    font-weight: bold;
+}
 .hidden{
     display: none;
 }

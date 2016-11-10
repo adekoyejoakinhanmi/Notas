@@ -5,7 +5,8 @@
 $(document).ready(function(){
     var focusNote = $("#focus-note"),
         fillingArea = $(".filling-area"),
-        newNote = $("#newNoteContent");
+        newNote = $("#newNoteContent"),
+		masonryGrid = $('.grid');
 
     focusNote.focus();
 
@@ -15,10 +16,15 @@ $(document).ready(function(){
         fillingArea.removeClass("hidden");
 
     });
-
+    
     newNote.on("blur", function () {
         focusNote.removeClass("hidden");
         fillingArea.addClass("hidden");
         focusNote.focus();
-    })
+    });
+	
+	//masonryGrid.masonry({
+	//	columnWidth : '.item',
+	//	itemSelector : '.item'
+	//});
 });
