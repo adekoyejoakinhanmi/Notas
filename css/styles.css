@@ -26,17 +26,28 @@ nav .btn{
    padding-left: 0;
 }
 .task-icon{
+	position: absolute;
+	background: white;
+	padding: 5px;
+	border-radius: 50%;
     margin: 3px 0 0 5px;
-    font-size: 1.5rem;
+    font-size: 0.9rem;
     color: #666666;
+	right: 10px;
+	top: -10px;
+	display: none;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+	animation: fade-in .7s;
 }
 .label.label-default{
     color: #000;
     background: #eee;
 }
-.task-icon.del:hover{
-    color: #ce4844;
-    font-size: 1.7rem;
+.panel:hover .task-icon{
+	display: block;
+}
+.panel{
+	cursor: pointer;
 }
 .task-icon.archive:hover{
     color: #1b809e;
@@ -44,6 +55,9 @@ nav .btn{
 }
 .panel-heading{
     font-weight: bold;
+}
+.panel-default > .panel-heading, .panel-footer{
+	background-color: transparent;
 }
 .form-pad{
     background: #fff;
@@ -81,7 +95,18 @@ input#focus-note:focus{
 .hidden{
     display: none;
 }
-/*Salvatore Styling*/
+
+@keyframes fade-in{
+	0%{
+		opacity: 0;
+	},
+	100%{
+		opacity: 1;
+	}
+}
+
+
+/*Salvatore Styling
 @media screen and (min-width: 1px) and (max-width: 389px){
     #grid[data-columns]::before {
         content: '1 .col-xs-12';
@@ -102,3 +127,4 @@ input#focus-note:focus{
         content: '4 .col-md-3';
     }
 }
+*/
