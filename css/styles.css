@@ -8,7 +8,7 @@ body{
     box-sizing: border-box;
     min-height: 100%;
     border-bottom: 1px solid transparent;
-    font-family: 'roboto',"consolas";
+    font-family: 'roboo',"arial";
     padding: 20px 0 0 0;
     background: rgba(232, 232,232, 1);
 }
@@ -25,15 +25,16 @@ nav .btn{
 .tags-hold{
    padding-left: 0;
 }
-.task-icon{
+
+.del{
 	position: absolute;
 	background: white;
-	padding: 5px;
+	padding: 7px;
 	border-radius: 50%;
     margin: 3px 0 0 5px;
     font-size: 0.9rem;
     color: #666666;
-	right: 10px;
+	left: 0px;
 	top: -10px;
 	display: none;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.2);
@@ -48,10 +49,6 @@ nav .btn{
 }
 .panel{
 	cursor: pointer;
-}
-.task-icon.archive:hover{
-    color: #1b809e;
-    font-size: 1.6rem;
 }
 .panel-heading{
     font-weight: bold;
