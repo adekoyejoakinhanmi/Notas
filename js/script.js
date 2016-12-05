@@ -41,11 +41,13 @@
 	/*This is the view for a single model*/
     Notas.Views.NoteView = Backbone.View.extend({
         initialize : function () {
-			this.model.on('destroy', this.deleteNote, this);
+			this.listenTo(this.model, 'destroy', this.deleteNote);
+			//this.model.on('destroy', this.deleteNote, this);
 		},
 
 		events: {
-			'click #del-note' : 'destroy'
+			'click #del-note' : 'destroy',
+			'dblclick .panel.panel-default' : 'show'
 		},
 
         template : _.template($('#note').html()),
@@ -61,6 +63,11 @@
 
 		deleteNote : function () {
 			this.$el.remove();
+		},
+
+		show : function () {
+			var view = new Notas.Views.ModalView({model : this.model});
+			view.show();
 		}
     });
     
@@ -82,8 +89,8 @@
 				content = this.$el.find('#newNoteContent'),
 				t = new Date(),
 				item = new Notas.Models.NoteModel({
-					title : title.val(),
-					content : content.val(),
+					title : title.val().trim() || '&nbsp;',
+					content : content.val().trim() || '&nbsp;',
 					time : t.toISOString().replace(/T|Z/g, " ").trim()
 				});
 			this.collection.add(item);
@@ -93,12 +100,31 @@
 		}
 	});
 
+	Notas.Views.ModalView = Backbone.View.extend({
+		className : 'modal fade',
+
+		template : _.template($('#edit-note').html()),
+
+		initialize: function () {
+			this.render();
+		},
+		show : function () {
+			this.$el.modal('show');
+		},
+		render : function () {
+			this.$el.html(this.template(this.model.toJSON()));
+			$(document.body).append(this.$el);
+			return this;
+			//this.$el.modal({show: false});
+		}
+	});
+
     Notas.Views.AllNotesView = Backbone.View.extend({
         el : $('.grid'),
         
 		initialize : function () {
-			this.collection.on('add', this.renderOne, this);
-			this.collection.on('remove', this.refreshGrid, this);
+			this.listenTo(this.collection, 'add', this.renderOne);
+			this.listenTo(this.collection, 'remove', this.refreshGrid);
 		},
 
         render : function () {
@@ -124,5 +150,5 @@
 	newTaskInputView = new Notas.Views.NewNoteInputView({collection : notesCollection});
     
 
-    notesView.render().el;
+    notesView.render().$el;
 }());

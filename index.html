@@ -52,7 +52,30 @@
 			</div>
         </div>
     </div>
-    
+
+	<script id="edit-note" type="text/template">
+
+	  <div class="modal-dialog">
+		<div class="modal-content">
+
+		  <div class="modal-header">
+			<input class="modal-title form-control" value="<%=title%>" type="text">
+		  </div>
+
+		  <div class="modal-body">
+			<textarea class="form-control">
+			<%=content%>
+			</textarea>
+		  </div>
+
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-sm btn-default pull-right">Done</button>
+		  </div>
+		</div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+
+	</script>
+
     <script id="note" type="text/template">
     <div class="item col-md-4 col-xs-6">
 		<div class="panel panel-default">
