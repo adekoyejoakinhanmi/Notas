@@ -2,8 +2,10 @@
     $
 */
 
-$(document).ready(function(){
-    var focusNote = $("#focus-note"),
+$(document).ready(function () {
+	'use strict';
+	/*
+	var focusNote = $("#focus-note"),
         fillingArea = $(".filling-area"),
         newNote = $("#newNoteContent"),
 		masonryGrid = $('.grid');
@@ -22,7 +24,7 @@ $(document).ready(function(){
         fillingArea.addClass("hidden");
         focusNote.focus();
     });
-	
+	*/
 	//masonryGrid.masonry({
 	//	columnWidth : '.item',
 	//	itemSelector : '.item'
